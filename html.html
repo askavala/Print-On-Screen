@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>mesagge app</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+        * {
+            font-family: 'Roboto', sans-serif;
+        }
+        #search {
+            font-size: large;
+        }
+        div{
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            flex-wrap: nowrap;
+            justify-content: center;
+            align-items: center;
+            align-content: flex-start;
+            width: 65%;
+            background-color: #7b5ebd;
+            height: 80vh;
+            overflow: auto;
+            flex-direction: column;
+        }
+        #search{
+            width: 50%;
+        }
+        button {
+            text-transform: capitalize;
+        }
+    </style>
+</head>
+<body>
+    <div class="div">
+        <p>You can press 'Enter' or 'print' button</p>
+        <input type="text" name="" id="search">
+        <button class="deneme">print</button>
+        <h1>Hello World!</h1>
+    </div>
+    <script>
+        const input_box = document.querySelector("#search"),
+              button = document.querySelector("button"),
+              text_area = document.querySelector("h1");
+
+        addEventListener("keypress",function(e){
+            if(e.key === 'Enter'){
+                text_area.innerText=input_box.value;
+                input_box.value = "";
+            }
+        })
+              
+        button.addEventListener("click", () => {
+            text_area.innerText=input_box.value;
+            input_box.value = "";
+        })    
+    </script>
+</body>
+</html>
